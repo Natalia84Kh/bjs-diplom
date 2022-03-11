@@ -1,11 +1,14 @@
 "use strict"
-const data = {login, password};
-this.loginFormCallback = function (data) {
-    ApiConnector.login(data, response);
-    if(response.success) {
-        location.reload();
-    }
-    setLoginErrorMessage(`Пользователь с логином ${data.login}  и указанным паролем не найден`);    
+const userForm1 = new UserForm();
+userForm1.loginFormCallback = function () {
+    
+    setTimeout(()=> {
+        if (ApiConnector.login) {
+            location.reload();
+        } else {
+        setLoginErrorMessage(`Пользователь с логином ${data.login}  и указанным паролем не найден`); 
+        };
+    
+    }, 2000);
 }
-
 
