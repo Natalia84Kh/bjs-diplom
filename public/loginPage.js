@@ -1,15 +1,7 @@
 "use strict"
 const userForm1 = new UserForm();
-userForm1.loginFormCallback = function ({login, password}) {
-    const data ={login, password};
-    function func (data) {
-        if (ApiConnector.login) {
-            location.reload();
-        } else {
-            setLoginErrorMessage(`Пользователь с логином ${data.login}  и указанным паролем не найден`); 
-        }
-    }
+userForm1.loginFormCallback = function (data) {
 
-    ApiConnector.login({login, password}, func);
-
-    }
+    ApiConnector.login(data, func.call(this, success) ? location.reload() : userForm1.setLoginErrorMessage(error));
+    
+}
