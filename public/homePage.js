@@ -38,7 +38,7 @@ moneyManager.addMoneyCallback = (data) => {
       ProfileWidget.showProfile(response.data);
       moneyManager.setMessage(response.success, "Пополнение баланса прошело успешно");
     } else {
-      moneyManager.setMessage(response.success, "Пополнение баланса завершилось ошибкой");
+      moneyManager.setMessage(response.success, response.error);
     }
   });
 } 
@@ -49,7 +49,7 @@ moneyManager.conversionMoneyCallback = (data) => {
       ProfileWidget.showProfile(response.data);
       moneyManager.setMessage(response.success, "Конвертация прошела успешно");
     } else {
-      moneyManager.setMessage(response.success, "Конвертация завершилась ошибкой");
+      moneyManager.setMessage(response.success, response.error);
     }
   });
 }
@@ -60,7 +60,7 @@ moneyManager.sendMoneyCallback = (data) => {
       ProfileWidget.showProfile(response.data);
       moneyManager.setMessage(response.success, "Перевод средств прошел успешно");
     } else {
-      moneyManager.setMessage(response.success, "Перевод средств завершился ошибкой");
+      moneyManager.setMessage(response.success, response.error);
     } 
   });
 }
